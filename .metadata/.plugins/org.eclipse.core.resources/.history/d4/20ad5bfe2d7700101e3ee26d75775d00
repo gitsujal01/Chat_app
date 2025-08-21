@@ -1,0 +1,10 @@
+package com.substring.chat.entities;
+
+import java.time.LocalDateTime;
+
+public class Message {
+
+	   private String sender;
+	   private String content;
+	   private LocalDateTime timestamp;
+}

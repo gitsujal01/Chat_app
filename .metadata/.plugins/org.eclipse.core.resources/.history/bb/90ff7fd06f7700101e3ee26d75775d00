@@ -1,0 +1,14 @@
+package com.substring.chat.services;
+
+import java.util.Optional;
+
+
+import com.substring.chat.entities.Room;
+
+
+public interface RoomService {
+	
+        public Room createRoom(Room r);
+        Optional<Room> joinRoom(String id);
+       	public Optional<Room> findByRoomId(String id);
+}

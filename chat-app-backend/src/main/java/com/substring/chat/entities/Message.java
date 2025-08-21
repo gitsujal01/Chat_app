@@ -1,0 +1,42 @@
+package com.substring.chat.entities;
+
+import java.time.LocalDateTime;
+
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "messages")
+public class Message {
+
+	   private String sender;
+	   private String content;
+	   private LocalDateTime timestamp;
+ 	public String getSender() {
+		return sender;
+	}
+	public void setSender(String sender) {
+		this.sender = sender;
+	}
+	public String getContent() {
+		return content;
+	}
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public LocalDateTime getTimestamp() {
+		return timestamp;
+	}
+	public void setTimestamp(LocalDateTime timestamp) {
+		this.timestamp = timestamp;
+	}
+	public Message() {
+		// TODO Auto-generated constructor stub
+	}
+	public Message(String sender, String content, LocalDateTime timestamp) {
+		super();
+		this.sender = sender;
+		this.content = content;
+		this.timestamp = timestamp;
+	}
+	 
+	   
+}

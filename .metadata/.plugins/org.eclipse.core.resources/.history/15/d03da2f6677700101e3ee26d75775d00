@@ -1,0 +1,28 @@
+package com.substring.chat.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+
+import com.substring.chat.entities.Room;
+import com.substring.chat.repositories.RoomRepository;
+
+public class RoomServiceImpl implements RoomService{
+
+	@Autowired
+	private RoomRepository rr;
+	
+	@Override
+	public Room createRoom(Room r) {
+		// TODO Auto-generated method stub
+		return rr.save(r);
+	}
+
+	@Override
+	public Room joinRoom(String id) {
+		// TODO Auto-generated method stub
+		return rr.findById(id);
+	}
+
+
+}

@@ -1,0 +1,29 @@
+package com.substring.chat.Controllers;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.stereotype.Controller;
+
+import com.substring.chat.entities.Message;
+import com.substring.chat.repositories.RoomRepository;
+
+@Controller
+public class ChatController {
+
+	@Autowired
+	private RoomRepository rr;
+
+	public ChatController(RoomRepository roomRepository)
+	{
+		this.rr = roomRepository;
+	}
+	
+	//for sending and receiving messages
+	@MessageMapping("/sendMessage/{roomId}")
+	@SendTo("/topic/room/{roomId}")
+	public Message sendMessage()
+	{
+		
+	}
+}

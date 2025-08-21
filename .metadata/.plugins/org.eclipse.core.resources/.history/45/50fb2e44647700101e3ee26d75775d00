@@ -1,0 +1,8 @@
+package com.substring.chat.services;
+
+import com.substring.chat.entities.Room;
+
+public interface RoomService {
+	
+        public Room CreateRoom(Room r);
+}
