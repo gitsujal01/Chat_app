@@ -109,6 +109,12 @@ const sendMessage = async ()=> {
     };   
 function handleLogout()
 {
+  if(stompClient)
+  {
+    stompClient.disconnect(()=>{
+      console.log("Left the chat")
+    })
+  }
   stompClient.disconnect();
   setConnected(false);
   setroomId("");

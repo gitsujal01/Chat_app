@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.messaging.handler.annotation.DestinationVariable;
 import org.springframework.messaging.handler.annotation.MessageMapping;
+import org.springframework.messaging.handler.annotation.Payload;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -32,8 +33,10 @@ public class ChatController {
 	//for sending and receiving messages
 	@MessageMapping("/sendMessage/{roomId}")
 	@SendTo("/topic/room/{roomId}")
-	public Message sendMessage(@DestinationVariable("roomId") String roomId,@RequestBody MessageRequest request) {
-	    Room roomm = rr.findByRoomId(roomId);
+	public Message sendMessage(@DestinationVariable("roomId") String roomId,@Payload MessageRequest request) {
+	  
+		  System.out.println("Received: " + request.getSender() + " -> " + request.getContent());
+		Room roomm = rr.findByRoomId(roomId);
 	    if(roomm==null) {
 	        throw new RuntimeException("Room not found..");
 	    }

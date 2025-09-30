@@ -33,12 +33,12 @@ public class RoomServiceImpl implements RoomService{
 
 	@Override
 	public Room joinRoom(String roomId) {
-	    return rr.findByRoomId(roomId);  // yahan findByRoomId use karo
+	    return rr.findByRoomId(roomId);  // findByRoomId use 
 	}
 
 	@Override
 	public Room findByRoomId(String roomId) {
-	    return rr.findByRoomId(roomId);  // yahan bhi findByRoomId use karo
+	    return rr.findByRoomId(roomId);  // findByRoomId use 
 	}
 
 	
