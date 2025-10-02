@@ -14,7 +14,7 @@ public class CorsConfig {
             @Override
             public void addCorsMappings(CorsRegistry registry) {
                 registry.addMapping("/**") // allow all endpoints
-                        .allowedOrigins("http://localhost:5173") // frontend origin
+                        .allowedOrigins("https://chathiveapp.netlify.app") // frontend origin
                         .allowedMethods("*")
                         .allowedHeaders("*");
             }
